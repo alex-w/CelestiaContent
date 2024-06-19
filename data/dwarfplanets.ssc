@@ -3,14 +3,13 @@
 # Pluto is defined first, so that it will be selected by the "9" key.
 
 
-# Masses of Pluto and Charon from Brozović et al. (2015), Icarus 246, 317-329
-# "The orbits and masses of satellites of Pluto"
-# https://ui.adsabs.harvard.edu/abs/2015Icar..246..317B/abstract
-# (Mass of Kerberos is available in this paper, but is conflicted by Porter+2023)
+# Masses of Pluto and Charon from Brozović and Jacobson (2024), AJ 167 (6), id.256
+# "Post-new-horizons Orbits and Masses for the Satellites of Pluto"
+# https://ui.adsabs.harvard.edu/abs/2024AJ....167..256B/abstract
 # Masses of Nix and Hydra from Porter and Canup (2023), Planet. Sci. J. 4, 120
 # "Orbits and Masses of the Small Satellites of Pluto"
 # https://ui.adsabs.harvard.edu/abs/2023PSJ.....4..120P/abstract
-# Bond albedos from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
+# Color calculated with phase integral from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
 # "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
 # https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
 ReferencePoint "Pluto-Charon" "Sol"
@@ -39,7 +38,7 @@ ReferencePoint "Pluto-Charon" "Sol"
 	NormalMap	"pluto-normal.*"
 	Color	[ 1.0 0.95948 0.86047 ]
 	Radius	1188.3
-	Mass	0.0021816949
+	Mass	0.0021809422
 	Atmosphere
 	{
 		Height	130
@@ -76,7 +75,6 @@ ReferencePoint "Pluto-Charon" "Sol"
 	}
 	LunarLambert	0.5
 	GeomAlbedo	0.575
-	BondAlbedo	0.41
 	InfoURL	"https://en.wikipedia.org/wiki/Pluto"
 }
 
@@ -87,7 +85,7 @@ ReferencePoint "Pluto-Charon" "Sol"
 	NormalMap	"charon-normal.*"
 	Color	[ 0.994 1.0 0.972 ]
 	Radius	606
-	Mass	0.000265636904
+	Mass	0.00026618885
 	OrbitFrame
 	{
 		EclipticJ2000	{ Center "Sol/Pluto-Charon" }
@@ -116,7 +114,6 @@ ReferencePoint "Pluto-Charon" "Sol"
 	}
 	LunarLambert	0.5
 	GeomAlbedo	0.34
-	BondAlbedo	0.25
 	InfoURL	"https://en.wikipedia.org/wiki/Charon_(moon)"
 }
 
@@ -309,377 +306,6 @@ ReferencePoint "Pluto-Charon" "Sol"
 	InfoURL	"https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)"
 }
 
-# Masses from Ragozzine and Brown (2009), AJ 137, 4766
-# "Orbits and Masses of the Satellites of the Dwarf Planet Haumea (2003 EL61)"
-# https://ui.adsabs.harvard.edu/abs/2009AJ....137.4766R/abstract
-# Secondaries' orbits from Gourgeot et al. (2016), A&A 593, A19
-# "Near-infrared spatially resolved spectroscopy of (136108) Haumea's multiple system"
-# https://ui.adsabs.harvard.edu/abs/2016A%26A...593A..19G
-# Rings from Ortiz et al. (2017), Nature 550 (7675), pp. 219-223
-# "The size, shape, density and ring of the dwarf planet Haumea from a stellar occultation"
-# https://ui.adsabs.harvard.edu/abs/2017Natur.550..219O/abstract
-"Haumea:136108 Haumea:2003 EL61" "Sol"
-{
-	Class	"dwarfplanet"
-	Texture	"asteroid.*"
-	Color	[ 0.816 0.832 0.847 ]
-	BlendTexture	true
-	SemiAxes	[ 1050 840 537 ]
-	Mass	0.00067079705
-	EllipticalOrbit
-	{
-		Epoch	2451545.0  # 2000 Jan 01 12:00
-		Period	281.085506693292
-		SemiMajorAxis	42.90950460441636
-		Eccentricity	0.1999182000560729
-		Inclination	28.20612298327123
-		AscendingNode	121.9332080747435
-		ArgOfPericenter	240.5885913068445
-		MeanAnomaly	189.5984149284886
-	}
-	UniformRotation
-	{
-		Period	3.915341
-		Inclination	126.356
-		AscendingNode	206.766
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.66
-	Rings
-	{
-		Inner	2252
-		Outer	2322
-		Texture	"haumea-rings.*"
-	}
-	InfoURL	"https://en.wikipedia.org/wiki/Haumea"
-}
-
-"Namaka:Haumea II:136108 Haumea II:S 2005 (2003 EL61) 2" "Sol/Haumea"
-{
-	Class	"minormoon"
-	Mesh	"asteroid.cms"
-	Texture	"icymoon.*"
-	Radius	80
-	Mass	0.0000002997321
-	OrbitFrame
-	{
-		EquatorJ2000	{ Center "Sol/Haumea" }
-	}
-	EllipticalOrbit
-	{
-		Epoch	2452167.5299  # Tperi = 2001 Sep 15 00:43:03
-		Period	18.323535
-		SemiMajorAxis	25147.829
-		Eccentricity	0.15543
-		Inclination	88.83
-		AscendingNode	206.73
-		ArgOfPericenter	143.44
-		MeanAnomaly	0
-	}
-	UniformRotation	# assumed to match orbit plane
-	{
-		Period	10	# unknown, very likely asynchronous
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.8
-	InfoURL	"https://en.wikipedia.org/wiki/Namaka_(moon)"
-}
-
-# Size from Fernández-Valenzuela et al. (2021), EPSC2021-609
-# "The stellar occultations by the largest satellite of the dwarf planet Haumea, Hi'iaka"
-# https://ui.adsabs.harvard.edu/abs/2021EPSC...15..609F
-# Shape and rotation from Hastings et al. (2016), AJ 152 (6), 195
-# "The Short Rotation Period of Hi’iaka, Haumea’s Largest Satellite"
-# https://ui.adsabs.harvard.edu/abs/2016AJ....152..195H
-# Obliquity from Fernández-Valenzuela et al. (2022), EPSC2022-406
-# "Hi'iaka's physical and dynamical properties using long-term photometric data"
-# https://ui.adsabs.harvard.edu/abs/2022EPSC...16..406F
-"Hi'iaka:Haumea I:136108 Haumea I:S 2005 (2003 EL61) 1" "Sol/Haumea"
-{
-	Class	"minormoon"
-	Mesh	"roughsphere.cms"
-	Texture	"icymoon.*"
-	Radius	175	 # "...a larger effective diameter than what has been published so far."
-	SemiAxes	[ 1 0.81 0.81 ]	# Amag=0.23, b/a=0.81 if edge-on
-	Mass	0.000002997321
-	OrbitFrame
-	{
-		EquatorJ2000	{ Center "Sol/Haumea" }
-	}
-	EllipticalOrbit
-	{
-		Epoch	2452190.3944	# Tperi = 2001 Oct 07 21:27:56
-		Period	49.031527
-		SemiMajorAxis	49502.940
-		Eccentricity	0.05260
-		Inclination	79.48
-		AscendingNode	192.99
-		ArgOfPericenter	276.14
-		MeanAnomaly	0
-	}
-	UniformRotation
-	{
-		Period	9.79736
-		Inclination	90	# relative to orbit plane
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.66
-	InfoURL	"https://en.wikipedia.org/wiki/Hi'iaka_(moon)"
-}
-
-# Mass for Makemake from Parker et al. (2018)
-# "The Mass, Density, and Figure of the Kuiper Belt Dwarf Planet Makemake"
-# https://ui.adsabs.harvard.edu/abs/2018DPS....5050902P/abstract
-# Bond albedo from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
-# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
-# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
-"Makemake:136472 Makemake:2005 FY9" "Sol"
-{
-	Class	"dwarfplanet"
-	Texture	"asteroid.*"
-	Color	[ 1.0 0.97796 0.92983 ]
-	BlendTexture	true
-	Radius	717
-	Oblateness	0.0098
-	Mass	0.000519089
-	EllipticalOrbit
-	{
-		Epoch	2451545.0  # 2000 Jan 01 12:00
-		Period	305.618241910877
-		SemiMajorAxis	45.3712468060245
-		Eccentricity	0.1645340773347865
-		Inclination	29.00016830342264
-		AscendingNode	79.27517546848136
-		ArgOfPericenter	296.2776194996502
-		MeanAnomaly	139.7234923399146
-	}
-	UniformRotation
-	{
-		Period	22.82657
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.81
-	BondAlbedo	0.74
-	InfoURL	"https://en.wikipedia.org/wiki/Makemake"
-}
-
-"S 2015 (136472) 1:MK 2" "Sol/Makemake"
-{
-	Class	"minormoon"
-	Mesh	"asteroid.cms"
-	Texture	"asteroid.*"
-	Radius	87.5
-	EllipticalOrbit
-	{
-		Period	12.4
-		SemiMajorAxis	21100
-	}
-	UniformRotation
-	{
-		Period	10
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.07
-	InfoURL	"https://en.wikipedia.org/wiki/S/2015_(136472)_1"
-}
-
-# System mass and orbit from Holler et al. (2021), Icarus 355, 114130
-# "The Eris/Dysnomia system I: The orbit of Dysnomia"
-# https://ui.adsabs.harvard.edu/abs/2021Icar..35514130H/abstract
-# Mass ratio from Brown and Butler (2023), Planet. Sci. J. 4, 193
-# "Masses and Densities of Dwarf Planet Satellites Measured with ALMA"
-# https://ui.adsabs.harvard.edu/abs/2023PSJ.....4..193B/abstract
-# (Assumes barycentric motion is detected.)
-# Eris' rotation from Bernstein et al. (2023), Planet. Sci. J. 4, 115
-# "Synchronous Rotation in the (136199) Eris-Dysnomia System"
-# https://ui.adsabs.harvard.edu/abs/2023PSJ.....4..115B/abstract
-# (Orientation assumes tidal locking with Dysnomia.)
-# Bond albedo from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
-# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
-# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
-"Eris:136199 Eris:2003 UB313" "Sol"
-{
-	Class	"dwarfplanet"
-	Texture	"asteroid.*"
-	Color	[ 1.0 0.99267 0.97075 ]
-	BlendTexture	true
-	Radius	1163
-	Mass	0.0027434829
-	EllipticalOrbit
-	{
-		Epoch	2451545.0  # 2000 Jan 01 12:00
-		Period	562.497729921706
-		SemiMajorAxis	68.14098093308586
-		Eccentricity	0.4324925102272213
-		Inclination	43.74046387971601
-		AscendingNode	36.12853207819096
-		ArgOfPericenter	150.8438151283544
-		MeanAnomaly	194.2922017610525
-	}
-	BodyFrame	{ EquatorJ2000 {} }
-	UniformRotation
-	{
-		Epoch	2453979.0  # 2006 Aug 31 12:00
-		# Period	378.504  # measured
-		Period	378.861576
-		Inclination	45.49
-		AscendingNode	126.17
-		MeridianAngle	359.61
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.96
-	BondAlbedo	0.99
-	InfoURL	"https://en.wikipedia.org/wiki/Eris_(dwarf_planet)"
-}
-
-"Dysnomia:Eris I:136199 Eris I:S 2005 (2003 UB313) 1" "Sol/Eris"
-{
-	Class	"moon"
-	Texture	"asteroid.*"
-	Color	[ 0.337 0.337 0.337 ]
-	BlendTexture	true
-	Radius	307.5
-	Mass	0.000013717
-	OrbitFrame	{ EquatorJ2000 {} }
-	EllipticalOrbit
-	{
-		Epoch	2453979.0  # 2006 Aug 31 12:00
-		Period	15.785899
-		SemiMajorAxis	37273
-		Eccentricity	0.0062
-		Inclination	45.49
-		MeanLongitude	125.78
-		AscendingNode	126.17
-		LongOfPericenter	307
-	}
-	BodyFrame	{ EquatorJ2000 {} }
-	UniformRotation
-	{
-		Epoch	2453979.0  # 2006 Aug 31 12:00
-		Inclination	45.49
-		AscendingNode	126.17
-		MeridianAngle	179.61
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.05
-	InfoURL	"https://en.wikipedia.org/wiki/Dysnomia_(moon)"
-}
-
-# Braga-Ribas et al. (2013), ApJ 773 (1), 26
-# "The Size, Shape, Albedo, Density, and Atmospheric Limit of Transneptunian Object
-# (50000) Quaoar from Multi-chord Stellar Occultations"
-# https://iopscience.iop.org/article/10.1088/0004-637X/773/1/26
-# Mass, radii, and rotation period from Morgado et al. (2023), Nature 614, 239–243
-# "A dense ring of the trans-Neptunian object Quaoar outside its Roche limit"
-# https://ui.adsabs.harvard.edu/abs/2023Natur.614..239M/abstract
-# Ring rotation axis and geometric albedo from Pereira et al. (2023), A&A 673, 14
-# "The two rings of (50000) Quaoar"
-# https://ui.adsabs.harvard.edu/abs/2023A%26A...673L...4P/abstract
-# Bond albedo from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
-# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
-# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
-"Quaoar:50000 Quaoar:2002 LM60" "Sol"
-{
-	Class	"dwarfplanet"
-	Texture	"asteroid.*"
-	Color	[ 0.382 0.355 0.319 ]
-	BlendTexture	true
-	Radius	579.5  # equatorial
-	Oblateness	0.12  # projected
-	Mass	0.0002009377
-	EllipticalOrbit
-	{
-		Epoch	2458600.5  # 2019 Apr 27
-		Period	288.784516916471
-		SemiMajorAxis	43.689506100204
-		Eccentricity	0.03955774099
-		Inclination	7.988143985547
-		AscendingNode	188.837473399366
-		ArgOfPericenter	146.461981388786
-		MeanAnomaly	300.65535440942
-	}
-	BodyFrame	{ EquatorJ2000 {} }
-	UniformRotation	# assume alignment of ring and equator
-	{
-		Period	17.6788
-		Inclination	36.55
-		AscendingNode	349.82
-	}
-	Rings
-	{
-		Inner	2515
-		Outer	4102
-		Texture	"quaoar-rings.*"
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.124
-	BondAlbedo	0.057
-	InfoURL	"https://en.wikipedia.org/wiki/50000_Quaoar"
-}
-
-# Radius and geometric albedo from Fernandez-Valenzuela et al., 55th Annual DPS Meeting Joint with EPSC
-# "Weywot: the darkest known satellite in the trans-Neptunian region"
-# https://submissions.mirasmart.com/DPS55/Itinerary/PresentationDetail.aspx?evdid=75
-"Weywot:Quaoar I:50000 Quaoar I:S 2006 (50000) 1" "Sol/Quaoar"
-{
-	Class	"minormoon"
-	Mesh	"asteroid.cms"  # almost 200 km effective diameter
-	Texture	"asteroid.*"
-	Color	[ 0.319 0.296 0.265 ]  # assume same photometric color as primary
-	BlendTexture	true
-	Radius	100
-	OrbitFrame
-	{
-		EquatorJ2000	{ Center "Sol/Quaoar" }
-	}
-	EllipticalOrbit
-	{
-		Epoch	2453300.5  # 2004 Oct 22
-		Period	12.4315
-		SemiMajorAxis	13583
-		Eccentricity	0.057
-		Inclination	36.9
-		AscendingNode	357.0
-		ArgOfPericenter	10.1
-		MeanAnomaly	69.2
-	}
-	UniformRotation  # to match orbit plane
-	{
-		Inclination	13.5
-		AscendingNode	352.3
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.04
-	InfoURL	"https://en.wikipedia.org/wiki/Weywot_(moon)"
-}
-
-"Sedna:90377 Sedna:2003 VB12" "Sol"
-{
-	Class	"dwarfplanet"
-	Texture	"asteroid.*"
-	Color	[ 0.978 0.886 0.746 ]
-	BlendTexture	true
-	Radius	497.5
-	EllipticalOrbit
-	{
-		Epoch	2459000.5  # 2020 May 31
-		Period	10662.6713802939
-		SemiMajorAxis	484.438385675118
-		Eccentricity	0.842587388666
-		Inclination	11.930691895012
-		AscendingNode	144.247866905974
-		ArgOfPericenter	311.352204298832
-		MeanAnomaly	358.116930442029
-	}
-	UniformRotation
-	{
-		Period	10.273
-	}
-	LunarLambert	0.5
-	GeomAlbedo	0.32
-	InfoURL	"https://en.wikipedia.org/wiki/90377_Sedna"
-}
-
 # Brown & Butler (2018), AJ 156 (4), 164
 # "Medium-sized Satellites of Large Kuiper Belt Objects"
 # https://iopscience.iop.org/article/10.3847/1538-3881/aad9f2
@@ -789,11 +415,282 @@ ReferencePoint "Orcus-Vanth" "Sol"
 	InfoURL	"https://en.wikipedia.org/wiki/Vanth_(moon)"
 }
 
+# Masses from Ragozzine and Brown (2009), AJ 137, 4766
+# "Orbits and Masses of the Satellites of the Dwarf Planet Haumea (2003 EL61)"
+# https://ui.adsabs.harvard.edu/abs/2009AJ....137.4766R/abstract
+# Secondaries' orbits from Gourgeot et al. (2016), A&A 593, A19
+# "Near-infrared spatially resolved spectroscopy of (136108) Haumea's multiple system"
+# https://ui.adsabs.harvard.edu/abs/2016A%26A...593A..19G
+# Rings from Ortiz et al. (2017), Nature 550 (7675), pp. 219-223
+# "The size, shape, density and ring of the dwarf planet Haumea from a stellar occultation"
+# https://ui.adsabs.harvard.edu/abs/2017Natur.550..219O/abstract
+"Haumea:136108 Haumea:2003 EL61" "Sol"
+{
+	Class	"dwarfplanet"
+	Texture	"asteroid.*"
+	Color	[ 0.816 0.832 0.847 ]
+	BlendTexture	true
+	SemiAxes	[ 1050 840 537 ]
+	Mass	0.00067079705
+	EllipticalOrbit
+	{
+		Epoch	2451545.0  # 2000 Jan 01 12:00
+		Period	281.085506693292
+		SemiMajorAxis	42.90950460441636
+		Eccentricity	0.1999182000560729
+		Inclination	28.20612298327123
+		AscendingNode	121.9332080747435
+		ArgOfPericenter	240.5885913068445
+		MeanAnomaly	189.5984149284886
+	}
+	UniformRotation
+	{
+		Period	3.915341
+		Inclination	126.356
+		AscendingNode	206.766
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.66
+	Rings
+	{
+		Inner	2252
+		Outer	2322
+		Texture	"haumea-rings.*"
+	}
+	InfoURL	"https://en.wikipedia.org/wiki/Haumea"
+}
+
+"Namaka:Haumea II:136108 Haumea II:S 2005 (2003 EL61) 2" "Sol/Haumea"
+{
+	Class	"moon"
+	Mesh	"asteroid.cms"
+	Texture	"icymoon.*"
+	Radius	80
+	Mass	0.0000002997321
+	OrbitFrame
+	{
+		EquatorJ2000	{ Center "Sol/Haumea" }
+	}
+	EllipticalOrbit
+	{
+		Epoch	2452167.5299  # Tperi = 2001 Sep 15 00:43:03
+		Period	18.323535
+		SemiMajorAxis	25147.829
+		Eccentricity	0.15543
+		Inclination	88.83
+		AscendingNode	206.73
+		ArgOfPericenter	143.44
+		MeanAnomaly	0
+	}
+	UniformRotation	# assumed to match orbit plane
+	{
+		Period	10	# unknown, very likely asynchronous
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.8
+	InfoURL	"https://en.wikipedia.org/wiki/Namaka_(moon)"
+}
+
+# Size from Fernández-Valenzuela et al. (2021), EPSC2021-609
+# "The stellar occultations by the largest satellite of the dwarf planet Haumea, Hi'iaka"
+# https://ui.adsabs.harvard.edu/abs/2021EPSC...15..609F
+# Shape and rotation from Hastings et al. (2016), AJ 152 (6), 195
+# "The Short Rotation Period of Hi’iaka, Haumea’s Largest Satellite"
+# https://ui.adsabs.harvard.edu/abs/2016AJ....152..195H
+# Obliquity from Fernández-Valenzuela et al. (2022), EPSC2022-406
+# "Hi'iaka's physical and dynamical properties using long-term photometric data"
+# https://ui.adsabs.harvard.edu/abs/2022EPSC...16..406F
+"Hi'iaka:Haumea I:136108 Haumea I:S 2005 (2003 EL61) 1" "Sol/Haumea"
+{
+	Class	"moon"
+	Mesh	"roughsphere.cms"
+	Texture	"icymoon.*"
+	Radius	175	 # "...a larger effective diameter than what has been published so far."
+	SemiAxes	[ 1 0.81 0.81 ]	# Amag=0.23, b/a=0.81 if edge-on
+	Mass	0.000002997321
+	OrbitFrame
+	{
+		EquatorJ2000	{ Center "Sol/Haumea" }
+	}
+	EllipticalOrbit
+	{
+		Epoch	2452190.3944	# Tperi = 2001 Oct 07 21:27:56
+		Period	49.031527
+		SemiMajorAxis	49502.940
+		Eccentricity	0.05260
+		Inclination	79.48
+		AscendingNode	192.99
+		ArgOfPericenter	276.14
+		MeanAnomaly	0
+	}
+	UniformRotation
+	{
+		Period	9.79736
+		Inclination	90	# relative to orbit plane
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.66
+	InfoURL	"https://en.wikipedia.org/wiki/Hi'iaka_(moon)"
+}
+
+# Braga-Ribas et al. (2013), ApJ 773 (1), 26
+# "The Size, Shape, Albedo, Density, and Atmospheric Limit of Transneptunian Object
+# (50000) Quaoar from Multi-chord Stellar Occultations"
+# https://iopscience.iop.org/article/10.1088/0004-637X/773/1/26
+# Mass and rotation period from Morgado et al. (2023), Nature 614, 239–243
+# "A dense ring of the trans-Neptunian object Quaoar outside its Roche limit"
+# https://ui.adsabs.harvard.edu/abs/2023Natur.614..239M/abstract
+# Radius and shape from Kiss et al. (2024), A&A 684, A50
+# "The visible and thermal light curve of the large Kuiper belt object (50000) Quaoar"
+# https://ui.adsabs.harvard.edu/abs/2024A%26A...684A..50K/abstract
+# Ring rotation axis and geometric albedo from Pereira et al. (2023), A&A 673, 14
+# "The two rings of (50000) Quaoar"
+# https://ui.adsabs.harvard.edu/abs/2023A%26A...673L...4P/abstract
+# https://ui.adsabs.harvard.edu/abs/2024A%26A...683C...4P/abstract
+# Photometric color calculated with spectral data from Marchi et al. (2003), A&A 408, L17-L19
+# "Visible spectroscopy of the two largest known trans-Neptunian objects: Ixion and Quaoar"
+# https://ui.adsabs.harvard.edu/abs/2003A%26A...408L..17M/abstract
+# Color calculated with phase integral from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
+# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
+# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
+"Quaoar:50000 Quaoar:2002 LM60" "Sol"
+{
+	Class	"dwarfplanet"
+	Texture	"asteroid.*"
+	Color	[ 0.413 0.379 0.328 ]
+	BlendTexture	true
+	Radius	545  # equatorial
+	SemiAxes	[ 1.18 0.992 0.855 ]	# a/b = 1.19, b/c = 1.16
+	Mass	0.0002009377
+	EllipticalOrbit
+	{
+		Epoch	2458600.5  # 2019 Apr 27
+		Period	288.784516916471
+		SemiMajorAxis	43.689506100204
+		Eccentricity	0.03955774099
+		Inclination	7.988143985547
+		AscendingNode	188.837473399366
+		ArgOfPericenter	146.461981388786
+		MeanAnomaly	300.65535440942
+	}
+	BodyFrame	{ EquatorJ2000 {} }
+	UniformRotation	# assume alignment of ring and equator
+	{
+		Period	17.6788
+		Inclination	36.55
+		AscendingNode	349.82
+	}
+	Rings
+	{
+		Inner	2515
+		Outer	4098
+		Texture	"quaoar-rings.*"
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.124
+	InfoURL	"https://en.wikipedia.org/wiki/Quaoar"
+}
+
+# Radius and geometric albedo from Fernandez-Valenzuela et al., 55th Annual DPS Meeting Joint with EPSC
+# "Weywot: the darkest known satellite in the trans-Neptunian region"
+# https://submissions.mirasmart.com/DPS55/Itinerary/PresentationDetail.aspx?evdid=75
+"Weywot:Quaoar I:50000 Quaoar I:S 2006 (50000) 1" "Sol/Quaoar"
+{
+	Class	"moon"
+	Mesh	"asteroid.cms"  # almost 200 km effective diameter
+	Texture	"asteroid.*"
+	Color	[ 0.325 0.297 0.255 ]  # assume same photometric color as primary
+	BlendTexture	true
+	Radius	100
+	OrbitFrame
+	{
+		EquatorJ2000	{ Center "Sol/Quaoar" }
+	}
+	EllipticalOrbit
+	{
+		Epoch	2453300.5  # 2004 Oct 22
+		Period	12.4315
+		SemiMajorAxis	13583
+		Eccentricity	0.057
+		Inclination	36.9
+		AscendingNode	357.0
+		ArgOfPericenter	10.1
+		MeanAnomaly	69.2
+	}
+	UniformRotation  # to match orbit plane
+	{
+		Inclination	13.5
+		AscendingNode	352.3
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.04
+	InfoURL	"https://en.wikipedia.org/wiki/Weywot_(moon)"
+}
+
+# Mass for Makemake from Parker et al. (2018)
+# "The Mass, Density, and Figure of the Kuiper Belt Dwarf Planet Makemake"
+# https://ui.adsabs.harvard.edu/abs/2018DPS....5050902P/abstract
+# Photometric color calculated with spectral data from Alvarez-Candal et al. (2020), MNRAS 497 (4), 5473-5479
+# "The dwarf planet Makemake as seen by X-Shooter"
+# https://ui.adsabs.harvard.edu/abs/2020MNRAS.497.5473A/abstract
+# Color calculated with phase integral from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
+# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
+# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
+"Makemake:136472 Makemake:2005 FY9" "Sol"
+{
+	Class	"dwarfplanet"
+	Texture	"asteroid.*"
+	Color	[ 1.0 0.975 0.914 ]
+	BlendTexture	true
+	Radius	717
+	Oblateness	0.0098
+	Mass	0.000519089
+	EllipticalOrbit
+	{
+		Epoch	2451545.0  # 2000 Jan 01 12:00
+		Period	305.618241910877
+		SemiMajorAxis	45.3712468060245
+		Eccentricity	0.1645340773347865
+		Inclination	29.00016830342264
+		AscendingNode	79.27517546848136
+		ArgOfPericenter	296.2776194996502
+		MeanAnomaly	139.7234923399146
+	}
+	UniformRotation
+	{
+		Period	22.82657
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.81
+	InfoURL	"https://en.wikipedia.org/wiki/Makemake"
+}
+
+"S 2015 (136472) 1:MK 2" "Sol/Makemake"
+{
+	Class	"moon"
+	Mesh	"asteroid.cms"
+	Texture	"asteroid.*"
+	Radius	87.5
+	EllipticalOrbit
+	{
+		Period	12.4
+		SemiMajorAxis	21100
+	}
+	UniformRotation
+	{
+		Period	10
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.07
+	InfoURL	"https://en.wikipedia.org/wiki/S/2015_(136472)_1"
+}
+
 # Kiss et al. (2019), Icarus 334, 3
 # "The mass and density of the dwarf planet (225088) 2007 OR10"
 # https://ui.adsabs.harvard.edu/abs/2019Icar..334....3K/abstract
 # Color indices from Boehnhardt et al. (2014), EMP 114 (1-2), 35
 # "Photometry of Transneptunian Objects for the Herschel Key Program 'TNOs are Cool'"
+# https://ui.adsabs.harvard.edu/abs/2014EM%26P..114...35B/abstract
 "Gonggong:225088 Gonggong:2007 OR10" "Sol"
 {
 	Class	"dwarfplanet"
@@ -801,7 +698,6 @@ ReferencePoint "Orcus-Vanth" "Sol"
 	Color	[ 0.622 0.542 0.42 ]
 	BlendTexture	true
 	Radius	615
-	Oblateness	0.03
 	Mass	0.0002930342
 	EllipticalOrbit
 	{
@@ -822,16 +718,19 @@ ReferencePoint "Orcus-Vanth" "Sol"
 	}
 	LunarLambert	0.5
 	GeomAlbedo	0.14
-	InfoURL	"https://en.wikipedia.org/wiki/225088_Gonggong"
+	InfoURL	"https://en.wikipedia.org/wiki/Gonggong_(dwarf_planet)"
 }
 
 # Radius from Arakawa et al. (2021), AJ 162, no. 6, 226
 # "Tidal Evolution of the Eccentric Moon around Dwarf Planet (225088) Gonggong"
 # https://ui.adsabs.harvard.edu/abs/2021AJ....162..226A/abstract
 # Geometric albedo is calculated using this radius.
+# Color indices from Kiss et al. (2019), Icarus 334, 3
+# "The mass and density of the dwarf planet (225088) 2007 OR10"
+# https://ui.adsabs.harvard.edu/abs/2019Icar..334....3K/abstract
 "Xiangliu:Gonggong I:225088 Gonggong I:S 2010 (225088) 1" "Sol/Gonggong"
 {
-	Class	"minormoon"
+	Class	"moon"
 	Mesh	"asteroid.cms"
 	Texture	"asteroid.*"
 	Color	[ 0.448 0.421 0.385 ]
@@ -855,4 +754,112 @@ ReferencePoint "Orcus-Vanth" "Sol"
 	LunarLambert	0.5
 	GeomAlbedo	0.08
 	InfoURL	"https://en.wikipedia.org/wiki/Xiangliu_(moon)"
+}
+
+# System mass and orbit from Holler et al. (2021), Icarus 355, 114130
+# "The Eris/Dysnomia system I: The orbit of Dysnomia"
+# https://ui.adsabs.harvard.edu/abs/2021Icar..35514130H/abstract
+# Mass ratio from Brown and Butler (2023), Planet. Sci. J. 4, 193
+# "Masses and Densities of Dwarf Planet Satellites Measured with ALMA"
+# https://ui.adsabs.harvard.edu/abs/2023PSJ.....4..193B/abstract
+# (Assumes barycentric motion is detected.)
+# Eris' rotation from Bernstein et al. (2023), Planet. Sci. J. 4, 115
+# "Synchronous Rotation in the (136199) Eris-Dysnomia System"
+# https://ui.adsabs.harvard.edu/abs/2023PSJ.....4..115B/abstract
+# (Orientation assumes tidal locking with Dysnomia.)
+# Color calculated with phase integral from Verbiscer et al. (2022), Planet. Sci. J. 3, 95
+# "The Diverse Shapes of Dwarf Planet and Large KBO Phase Curves Observed from New Horizons"
+# https://ui.adsabs.harvard.edu/abs/2022PSJ.....3...95V/abstract
+"Eris:136199 Eris:2003 UB313" "Sol"
+{
+	Class	"dwarfplanet"
+	Texture	"asteroid.*"
+	Color	[ 1.0 0.99267 0.97075 ]
+	BlendTexture	true
+	Radius	1163
+	Mass	0.0027434829
+	EllipticalOrbit
+	{
+		Epoch	2451545.0  # 2000 Jan 01 12:00
+		Period	562.497729921706
+		SemiMajorAxis	68.14098093308586
+		Eccentricity	0.4324925102272213
+		Inclination	43.74046387971601
+		AscendingNode	36.12853207819096
+		ArgOfPericenter	150.8438151283544
+		MeanAnomaly	194.2922017610525
+	}
+	BodyFrame	{ EquatorJ2000 {} }
+	UniformRotation
+	{
+		Epoch	2453979.0  # 2006 Aug 31 12:00
+		# Period	378.504  # measured
+		Period	378.861576
+		Inclination	45.49
+		AscendingNode	126.17
+		MeridianAngle	359.61
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.96
+	InfoURL	"https://en.wikipedia.org/wiki/Eris_(dwarf_planet)"
+}
+
+"Dysnomia:Eris I:136199 Eris I:S 2005 (2003 UB313) 1" "Sol/Eris"
+{
+	Class	"moon"
+	Texture	"asteroid.*"
+	Color	[ 0.337 0.337 0.337 ]
+	BlendTexture	true
+	Radius	307.5
+	Mass	0.000013717
+	OrbitFrame	{ EquatorJ2000 {} }
+	EllipticalOrbit
+	{
+		Epoch	2453979.0  # 2006 Aug 31 12:00
+		Period	15.785899
+		SemiMajorAxis	37273
+		Eccentricity	0.0062
+		Inclination	45.49
+		MeanLongitude	125.78
+		AscendingNode	126.17
+		LongOfPericenter	307
+	}
+	BodyFrame	{ EquatorJ2000 {} }
+	UniformRotation
+	{
+		Epoch	2453979.0  # 2006 Aug 31 12:00
+		Inclination	45.49
+		AscendingNode	126.17
+		MeridianAngle	179.61
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.05
+	InfoURL	"https://en.wikipedia.org/wiki/Dysnomia_(moon)"
+}
+
+"Sedna:90377 Sedna:2003 VB12" "Sol"
+{
+	Class	"dwarfplanet"
+	Texture	"asteroid.*"
+	Color	[ 0.978 0.886 0.746 ]
+	BlendTexture	true
+	Radius	497.5
+	EllipticalOrbit
+	{
+		Epoch	2459000.5  # 2020 May 31
+		Period	10662.6713802939
+		SemiMajorAxis	484.438385675118
+		Eccentricity	0.842587388666
+		Inclination	11.930691895012
+		AscendingNode	144.247866905974
+		ArgOfPericenter	311.352204298832
+		MeanAnomaly	358.116930442029
+	}
+	UniformRotation
+	{
+		Period	10.273
+	}
+	LunarLambert	0.5
+	GeomAlbedo	0.32
+	InfoURL	"https://en.wikipedia.org/wiki/Sedna_(dwarf_planet)"
 }
